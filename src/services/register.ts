@@ -5,13 +5,21 @@ export interface RegisterData {
   lastName: string;
 }
 
-export async function registerUser(data: RegisterData): Promise<void> {
-  const response = await fetch('http://localhost:3000/auth/register', {
+export async function registerUser(data: RegisterData & { nombre?: string; apellido?: string }): Promise<void> {
+  const API_URL = import.meta.env.VITE_API_URL;
+  // Permitir ambos juegos de nombres
+  const payload = {
+    email: data.email,
+    password: data.password,
+    firstName: data.firstName || data.nombre || '',
+    lastName: data.lastName || data.apellido || '',
+  };
+  const response = await fetch(`${API_URL}/auth/register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(payload),
   });
   if (!response.ok) {
     const errorData = await response.json().catch(() => ({}));
