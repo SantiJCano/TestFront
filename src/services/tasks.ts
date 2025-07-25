@@ -34,7 +34,7 @@ export async function deleteTask(id: string, token: string): Promise<void> {
 }
 
 export async function getTasks(token: string): Promise<Task[]> {
-  const response = await fetch('${import.meta.env.VITE_API_URL}/tasks', {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/tasks`, {
     headers: {
       'Authorization': `Bearer ${token}`,
     },
@@ -67,7 +67,7 @@ export async function updateTask(token: string, id: string, data: Partial<Create
 }
 
 export async function createTask(token: string, data: CreateTaskDto): Promise<Task> {
-  const response = await fetch('${import.meta.env.VITE_API_URL}/tasks', {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/tasks`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
