@@ -2,6 +2,31 @@
 
 Interfaz moderna con **React 19** y **TypeScript** para gestión de tareas.
 
+---
+
+## 🚀 Probar el CRUD Online
+
+Puedes probar la aplicación directamente aquí: [https://test-front-zeta-wheat.vercel.app/](https://test-front-zeta-wheat.vercel.app/)
+
+---
+
+## 👤 ¿Cómo usar el CRUD?
+
+1. **Registro:**
+   - Haz clic en "Registrarse" y completa el formulario para crear una cuenta nueva.
+2. **Login:**
+   - Ingresa con tu email y contraseña registrados.
+3. **Gestión de tareas:**
+   - Una vez autenticado, accede al panel de tareas.
+   - Puedes **crear**, **editar**, **eliminar** y **marcar como completadas** tus tareas.
+   - Usa los filtros para buscar por estado o prioridad.
+4. **Cerrar sesión:**
+   - Utiliza el menú de usuario para cerrar sesión de forma segura.
+
+> La app es responsiva y funciona tanto en móvil como en escritorio.
+
+---
+
 ## 🛠️ Stack Tecnológico
 
 - **React 19.x** + **TypeScript 5.x**
