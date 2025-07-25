@@ -19,7 +19,7 @@ export interface CreateTaskDto {
 }
 
 export async function deleteTask(id: string, token: string): Promise<void> {
-  const response = await fetch(`http://localhost:3000/tasks/${id}`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/tasks/${id}`, {
     method: 'DELETE',
     headers: {
       'Authorization': `Bearer ${token}`,
@@ -34,7 +34,7 @@ export async function deleteTask(id: string, token: string): Promise<void> {
 }
 
 export async function getTasks(token: string): Promise<Task[]> {
-  const response = await fetch('http://localhost:3000/tasks', {
+  const response = await fetch('${import.meta.env.VITE_API_URL}/tasks', {
     headers: {
       'Authorization': `Bearer ${token}`,
     },
@@ -51,7 +51,7 @@ export async function getTasks(token: string): Promise<Task[]> {
 }
 
 export async function updateTask(token: string, id: string, data: Partial<CreateTaskDto>): Promise<Task> {
-  const response = await fetch(`http://localhost:3000/tasks/${id}`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/tasks/${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ export async function updateTask(token: string, id: string, data: Partial<Create
 }
 
 export async function createTask(token: string, data: CreateTaskDto): Promise<Task> {
-  const response = await fetch('http://localhost:3000/tasks', {
+  const response = await fetch('${import.meta.env.VITE_API_URL}/tasks', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
